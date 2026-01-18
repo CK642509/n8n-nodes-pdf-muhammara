@@ -151,9 +151,25 @@ npm run dev
 
 ### Example Workflow
 
+An example workflow is provided in `example-workflow.json`. You can import this workflow into n8n to see how the PDF Encrypt node works:
+
 1. **HTTP Request** or **Read Binary File** node → reads a PDF file
 2. **PDF Encrypt** node → encrypts the PDF with a password
 3. **Write Binary File** or **Send Email** node → outputs the encrypted PDF
+
+To import the example workflow:
+1. Open n8n
+2. Click on "Workflows" → "Import from File"
+3. Select the `example-workflow.json` file
+4. Execute the workflow to see the PDF encryption in action
+
+### Workflow Example Steps
+
+```
+Manual Trigger → HTTP Request (Download PDF) → PDF Encrypt → Write Binary File
+```
+
+The example downloads a sample PDF, encrypts it with a password, and saves it to `/tmp/encrypted_document.pdf`.
 
 ## Compatibility
 
