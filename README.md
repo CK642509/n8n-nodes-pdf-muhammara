@@ -4,6 +4,10 @@ This is an n8n community node that provides PDF encryption functionality using t
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
+## ⚠️ Development Status
+
+**Note**: The core PDF encryption logic is currently a placeholder (TODO). The node structure, configuration, and integration are complete, but the actual encryption functionality using muhammara needs to be implemented in `nodes/PdfEncrypt/PdfEncrypt.node.ts` (lines 69-77) before production use.
+
 ## Features
 
 - Encrypt PDF files with password protection

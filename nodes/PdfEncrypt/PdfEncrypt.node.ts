@@ -68,10 +68,24 @@ export class PdfEncrypt implements INodeType {
 
 				// TODO: Implement PDF encryption using muhammara
 				// This is a placeholder - actual encryption logic should be implemented here
+				// Reference: https://github.com/julianhille/MuhammaraJS
+				// 
 				// Example implementation would:
-				// 1. Use muhammara to read the PDF from inputBuffer
-				// 2. Apply password encryption
-				// 3. Generate encrypted PDF buffer
+				// 1. Import muhammara: const muhammara = require('muhammara');
+				// 2. Create a PDF writer with encryption options
+				// 3. Use muhammara to read the PDF from inputBuffer
+				// 4. Apply password encryption with user password and owner password
+				// 5. Generate encrypted PDF buffer
+				// 6. Return the encrypted buffer
+				// 
+				// Example code structure:
+				// const pdfWriter = muhammara.createWriter();
+				// pdfWriter.encrypt({
+				//   userPassword: password,
+				//   ownerPassword: password,
+				//   userProtectionFlag: 4 // Printing allowed
+				// });
+				// ... (implementation details)
 				
 				// For now, we'll just pass through the original data as a placeholder
 				const encryptedBuffer = inputBuffer;

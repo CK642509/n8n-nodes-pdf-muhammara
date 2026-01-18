@@ -30,11 +30,20 @@ You'll be prompted to enter:
 
 Ensure your package.json has the correct information:
 
+**Important**: Before publishing, update the following fields in package.json:
+- `author.email`: Replace `your-email@example.com` with your actual email address
+- `author.name`: Update with your name or organization
+- `version`: Ensure the version number is correct
+
 ```json
 {
   "name": "n8n-nodes-pdf-muhammara",
   "version": "0.1.0",
   "description": "n8n custom node for PDF encryption using muhammara",
+  "author": {
+    "name": "Your Name",
+    "email": "your.actual.email@example.com"
+  },
   "keywords": [
     "n8n-community-node-package",
     "n8n",
