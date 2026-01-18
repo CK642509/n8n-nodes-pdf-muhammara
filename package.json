@@ -13,7 +13,7 @@
   "homepage": "https://github.com/CK642509/n8n-nodes-pdf-muhammara",
   "author": {
     "name": "CK642509",
-    "email": ""
+    "email": "your-email@example.com"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,8 @@
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes --write",
-    "lint": "eslint nodes package.json",
-    "lintfix": "eslint nodes package.json --fix",
+    "lint": "eslint 'nodes/**/*.ts' package.json",
+    "lintfix": "eslint 'nodes/**/*.ts' package.json --fix",
     "prepublishOnly": "npm run build && npm run lint"
   },
   "files": [
@@ -50,6 +50,6 @@
     "n8n-workflow": "*"
   },
   "dependencies": {
-    "muhammara": "^3.5.0"
+    "muhammara": "^6.0.0"
   }
 }
