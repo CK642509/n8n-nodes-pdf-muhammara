@@ -101,18 +101,21 @@ export class PdfEncrypt implements INodeType {
 				});
 
 			} catch (error) {
+				const errorMessage = error instanceof Error ? error.message : 'Unknown error during PDF encryption';
 				if (this.continueOnFail()) {
 					returnData.push({
 						json: {
-							error: error.message,
+							error: errorMessage,
 						},
 						pairedItem: itemIndex,
 					});
 					continue;
 				}
-				throw new NodeOperationError(this.getNode(), error as Error, {
-					itemIndex,
-				});
+				throw new NodeOperationError(
+					this.getNode(), 
+					`Failed to encrypt PDF: ${errorMessage}`,
+					{ itemIndex }
+				);
 			}
 		}
 
