@@ -75,6 +75,27 @@ cd /path/to/your/n8n/project
 npm link n8n-nodes-pdf-muhammara
 ```
 
+#### Method A2: Using npm link with Local n8n Installation (n8n 2.x)
+
+If n8n is **not** installed globally (e.g., installed in a local project folder), n8n 2.x will only load community nodes from the `~/.n8n/nodes` directory:
+
+```bash
+# Step 1: In the n8n-nodes-pdf-muhammara directory, create a global link
+cd /path/to/n8n-nodes-pdf-muhammara
+npm link
+
+# Step 2: Go to ~/.n8n/nodes directory and link the package
+# On Linux/macOS:
+cd ~/.n8n/nodes
+npm link n8n-nodes-pdf-muhammara
+
+# On Windows:
+cd %USERPROFILE%\.n8n\nodes
+npm link n8n-nodes-pdf-muhammara
+```
+
+> **Note**: If the `~/.n8n/nodes` directory doesn't exist, create it first and initialize with `npm init -y`.
+
 #### Method B: Using CUSTOM_EXTENSION_ENV Environment Variable
 
 ```bash
