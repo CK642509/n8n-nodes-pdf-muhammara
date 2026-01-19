@@ -6,6 +6,8 @@ import {
 	NodeOperationError,
 } from 'n8n-workflow';
 
+import * as muhammara from 'muhammara';
+
 export class PdfEncrypt implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'PDF Encrypt',
@@ -66,29 +68,20 @@ export class PdfEncrypt implements INodeType {
 				const binaryData = this.helpers.assertBinaryData(itemIndex, binaryPropertyName);
 				const inputBuffer = await this.helpers.getBinaryDataBuffer(itemIndex, binaryPropertyName);
 
-				// TODO: Implement PDF encryption using muhammara
-				// This is a placeholder - actual encryption logic should be implemented here
-				// Reference: https://github.com/julianhille/MuhammaraJS
-				// 
-				// Example implementation would:
-				// 1. Import muhammara: const muhammara = require('muhammara');
-				// 2. Create a PDF writer with encryption options
-				// 3. Use muhammara to read the PDF from inputBuffer
-				// 4. Apply password encryption with user password and owner password
-				// 5. Generate encrypted PDF buffer
-				// 6. Return the encrypted buffer
-				// 
-				// Example code structure:
-				// const pdfWriter = muhammara.createWriter();
-				// pdfWriter.encrypt({
-				//   userPassword: password,
-				//   ownerPassword: password,
-				//   userProtectionFlag: 4 // Printing allowed
-				// });
-				// ... (implementation details)
+				// Encrypt PDF using muhammara
+				const { PDFWStreamForBuffer, PDFRStreamForBuffer } = muhammara;
 				
-				// For now, we'll just pass through the original data as a placeholder
-				const encryptedBuffer = inputBuffer;
+				const input = new PDFRStreamForBuffer(inputBuffer);
+				const output = new PDFWStreamForBuffer();
+				
+				muhammara.recrypt(input, output, {
+					password: password,
+					userPassword: password,
+					ownerPassword: password,
+					userProtectionFlag: 4, // Printing allowed
+				});
+				
+				const encryptedBuffer = output.buffer;
 
 				// Prepare the output binary data
 				const newBinaryData = await this.helpers.prepareBinaryData(
