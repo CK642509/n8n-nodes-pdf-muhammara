@@ -74,6 +74,8 @@ export class PdfEncrypt implements INodeType {
 				const input = new PDFRStreamForBuffer(inputBuffer);
 				const output = new PDFWStreamForBuffer();
 				
+				// Using the same password for user and owner provides a single-password protection model
+				// This matches the reference implementation and is appropriate for use cases like payroll documents
 				muhammara.recrypt(input, output, {
 					password: password,
 					userPassword: password,
