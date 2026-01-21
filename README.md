@@ -43,27 +43,23 @@ See [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for setup, linking, and trouble
 
 ### Example Workflow
 
-An example workflow is provided in [example-workflow.json](example-workflow.json). You can import this workflow into n8n to see how the PDF Encrypt node works:
+[example-workflow.json](example-workflow.json) provides a sample workflow with these steps:
+1. **When clicking 'Test workflow'** → manual trigger
+2. **HTTP Request - Download PDF** → fetch sample PDF
+3. **PDF Encrypt** → apply the password
+4. **Read/Write Files from Disk** → save `encrypted_document.pdf`
 
-1. **HTTP Request** or **Read Binary File** node → reads a PDF file
-2. **PDF Encrypt** node → encrypts the PDF with a password
-3. **Write Binary File** or **Send Email** node → outputs the encrypted PDF
+Import it in n8n via **Workflows → Import from File**, pick the JSON, and run.
 
-To import the example workflow:
-1. Open n8n
-2. Click on "Workflows" → "Import from File"
-3. Select the [example-workflow.json](example-workflow.json) file
-4. Execute the workflow to see the PDF encryption in action
-
-> Note: Starting with n8n 2.0, file operations are restricted to the `~/.n8n-files` directory by default. The example workflow writes the encrypted PDF to that directory (see [n8n v2.0 breaking changes](https://docs.n8n.io/2-0-breaking-changes/?_gl=1*u09ket*_ga*ODg2ODA0MTMwLjE3Njc2MDIxNTM.*_ga_0SC4FF2FH9*czE3Njg5NjczNTYkbzYkZzEkdDE3Njg5Njk0NjIkajYwJGwwJGgw#set-default-value-for-n8n_restrict_file_access_to)).
+> n8n 2.0 restricts file writes to `~/.n8n-files`; the example saves there (see [n8n v2.0 breaking changes](https://docs.n8n.io/2-0-breaking-changes/?_gl=1*u09ket*_ga*ODg2ODA0MTMwLjE3Njc2MDIxNTM.*_ga_0SC4FF2FH9*czE3Njg5NjczNTYkbzYkZzEkdDE3Njg5Njk0NjIkajYwJGwwJGgw#set-default-value-for-n8n_restrict_file_access_to)).
 
 ### Workflow Example Steps
 
 ```
-When clicking 'Test workflow' → HTTP Request - Download PDF → PDF Encrypt → Read/Write Files from Disk
+Test workflow → HTTP Request (download PDF) → PDF Encrypt → Read/Write Files from Disk
 ```
 
-The example downloads a sample PDF, encrypts it with a password, and saves it to ~/.n8n-files/encrypted_document.pdf (update the output path if your n8n instance uses a different files directory).
+The example downloads a sample PDF, encrypts it with your password, and saves it to `~/.n8n-files/encrypted_document.pdf` (change the path if your files directory differs).
 
 ## Resources
 
