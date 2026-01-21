@@ -60,14 +60,10 @@ To import the example workflow:
 ### Workflow Example Steps
 
 ```
-Manual Trigger → HTTP Request (Download PDF) → PDF Encrypt → Write Binary File
+When clicking 'Test workflow' → HTTP Request - Download PDF → PDF Encrypt → Read/Write Files from Disk
 ```
 
-The example downloads a sample PDF, encrypts it with a password, and saves it to ~/.n8n-files/encrypted_document.pdf.
-
-## Compatibility
-
-This node is compatible with n8n version 0.187.0 and above.
+The example downloads a sample PDF, encrypts it with a password, and saves it to ~/.n8n-files/encrypted_document.pdf (update the output path if your n8n instance uses a different files directory).
 
 ## Resources
 
