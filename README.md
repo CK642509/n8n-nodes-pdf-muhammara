@@ -43,7 +43,7 @@ See [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for setup, linking, and trouble
 
 ### Example Workflow
 
-An example workflow is provided in `example-workflow.json`. You can import this workflow into n8n to see how the PDF Encrypt node works:
+An example workflow is provided in [example-workflow.json](example-workflow.json). You can import this workflow into n8n to see how the PDF Encrypt node works:
 
 1. **HTTP Request** or **Read Binary File** node → reads a PDF file
 2. **PDF Encrypt** node → encrypts the PDF with a password
@@ -52,8 +52,10 @@ An example workflow is provided in `example-workflow.json`. You can import this 
 To import the example workflow:
 1. Open n8n
 2. Click on "Workflows" → "Import from File"
-3. Select the `example-workflow.json` file
+3. Select the [example-workflow.json](example-workflow.json) file
 4. Execute the workflow to see the PDF encryption in action
+
+> Note: Starting with n8n 2.0, file operations are restricted to the `~/.n8n-files` directory by default. The example workflow writes the encrypted PDF to that directory (see [n8n v2.0 breaking changes](https://docs.n8n.io/2-0-breaking-changes/?_gl=1*u09ket*_ga*ODg2ODA0MTMwLjE3Njc2MDIxNTM.*_ga_0SC4FF2FH9*czE3Njg5NjczNTYkbzYkZzEkdDE3Njg5Njk0NjIkajYwJGwwJGgw#set-default-value-for-n8n_restrict_file_access_to)).
 
 ### Workflow Example Steps
 
@@ -61,7 +63,7 @@ To import the example workflow:
 Manual Trigger → HTTP Request (Download PDF) → PDF Encrypt → Write Binary File
 ```
 
-The example downloads a sample PDF, encrypts it with a password, and saves it to `/tmp/encrypted_document.pdf`.
+The example downloads a sample PDF, encrypts it with a password, and saves it to ~/.n8n-files/encrypted_document.pdf.
 
 ## Compatibility
 
