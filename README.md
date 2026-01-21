@@ -13,15 +13,9 @@ This is an n8n community node that provides PDF encryption functionality using t
 
 ## Installation
 
-### For n8n Cloud or Self-hosted n8n
+Community Nodes installation is not supported yet; install via npm instead.
 
-1. Go to **Settings** > **Community Nodes**
-2. Select **Install**
-3. Enter `n8n-nodes-pdf-muhammara` in the **Enter npm package name** field
-4. Agree to the risks of using community nodes
-5. Select **Install**
-
-### For npm (Global Installation)
+### npm (Global Installation)
 
 ```bash
 npm install -g n8n-nodes-pdf-muhammara
