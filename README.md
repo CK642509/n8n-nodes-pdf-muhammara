@@ -51,15 +51,9 @@ See [LOCAL_DEVELOPMENT.md](LOCAL_DEVELOPMENT.md) for setup, linking, and trouble
 
 Import it in n8n via **Workflows → Import from File**, pick the JSON, and run.
 
-> n8n 2.0 restricts file writes to `~/.n8n-files`; the example saves there (see [n8n v2.0 breaking changes](https://docs.n8n.io/2-0-breaking-changes/?_gl=1*u09ket*_ga*ODg2ODA0MTMwLjE3Njc2MDIxNTM.*_ga_0SC4FF2FH9*czE3Njg5NjczNTYkbzYkZzEkdDE3Njg5Njk0NjIkajYwJGwwJGgw#set-default-value-for-n8n_restrict_file_access_to)).
-
-### Workflow Example Steps
-
-```
-Test workflow → HTTP Request (download PDF) → PDF Encrypt → Read/Write Files from Disk
-```
-
 The example downloads a sample PDF, encrypts it with your password, and saves it to `~/.n8n-files/encrypted_document.pdf` (change the path if your files directory differs).
+
+> n8n 2.0 restricts file writes to `~/.n8n-files` (see [n8n v2.0 breaking changes](https://docs.n8n.io/2-0-breaking-changes/?_gl=1*u09ket*_ga*ODg2ODA0MTMwLjE3Njc2MDIxNTM.*_ga_0SC4FF2FH9*czE3Njg5NjczNTYkbzYkZzEkdDE3Njg5Njk0NjIkajYwJGwwJGgw#set-default-value-for-n8n_restrict_file_access_to)).
 
 ## Resources
 
