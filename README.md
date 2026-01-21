@@ -15,6 +15,8 @@ This is an n8n community node that provides PDF encryption functionality using t
 
 Community Nodes installation is not supported yet; install via npm instead.
 
+Package on npm: [n8n-nodes-pdf-muhammara](https://www.npmjs.com/package/n8n-nodes-pdf-muhammara)
+
 ### npm (Global Installation)
 
 ```bash
