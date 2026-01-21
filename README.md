@@ -4,8 +4,6 @@ This is an n8n community node that provides PDF encryption functionality using t
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-> Note: This package is not yet published to npm; use the local development steps below until it is released.
-
 ## Features
 
 - Encrypt PDF files with password protection
