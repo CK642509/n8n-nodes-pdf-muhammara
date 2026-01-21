@@ -24,8 +24,8 @@
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes --write",
-    "lint": "eslint 'nodes/**/*.ts' package.json",
-    "lintfix": "eslint 'nodes/**/*.ts' package.json --fix",
+    "lint": "eslint \"nodes/**/*.ts\" package.json",
+    "lintfix": "eslint \"nodes/**/*.ts\" package.json --fix",
     "prepublishOnly": "npm run build && npm run lint"
   },
   "files": [

@@ -3,11 +3,14 @@
   "nodes": [
     {
       "parameters": {},
-      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "id": "eabdbd35-de2b-43b3-acd4-6ce4798be7d5",
       "name": "When clicking 'Test workflow'",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
-      "position": [250, 300]
+      "position": [
+        -272,
+        -320
+      ]
     },
     {
       "parameters": {
@@ -20,37 +23,46 @@
           }
         }
       },
-      "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "id": "9cbe6f86-7d89-48fb-9b51-37866112a977",
       "name": "HTTP Request - Download PDF",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
-      "position": [450, 300]
+      "position": [
+        -80,
+        -320
+      ]
     },
     {
       "parameters": {
-        "binaryPropertyName": "data",
-        "password": "MySecurePassword123",
+        "password": "123",
         "outputFilename": "encrypted_document.pdf"
       },
-      "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "id": "fe92add7-5a94-4c77-8be2-dda5fe1df615",
       "name": "PDF Encrypt",
       "type": "n8n-nodes-pdf-muhammara.pdfEncrypt",
       "typeVersion": 1,
-      "position": [650, 300]
+      "position": [
+        128,
+        -320
+      ]
     },
     {
       "parameters": {
         "operation": "write",
-        "fileName": "=/tmp/{{ $json.filename }}",
-        "dataPropertyName": "data"
+        "fileName": "=~/.n8n-files/{{ $json.filename }}",
+        "options": {}
       },
-      "id": "d4e5f6a7-b890-1234-def1-234567890123",
-      "name": "Write Binary File",
-      "type": "n8n-nodes-base.writeBinaryFile",
-      "typeVersion": 1,
-      "position": [850, 300]
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        336,
+        -320
+      ],
+      "id": "aee3aead-18dc-451a-8f0d-34dc379ab58f",
+      "name": "Read/Write Files from Disk"
     }
   ],
+  "pinData": {},
   "connections": {
     "When clicking 'Test workflow'": {
       "main": [
@@ -78,7 +90,7 @@
       "main": [
         [
           {
-            "node": "Write Binary File",
+            "node": "Read/Write Files from Disk",
             "type": "main",
             "index": 0
           }
@@ -86,8 +98,16 @@
       ]
     }
   },
-  "pinData": {},
+  "active": false,
   "settings": {
-    "executionOrder": "v1"
-  }
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "2565fdb3-1e38-418c-9b94-51054cbfcb36",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c54b7f4d6bf76776251e04cf71f9f6c8593c1d2c3f7d0861afacd357783ccf4a"
+  },
+  "id": "LMSuidfZbbA54SzA",
+  "tags": []
 }
